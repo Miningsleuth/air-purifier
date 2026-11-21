@@ -12,12 +12,12 @@ A smart home compatible air purifier! I am making this project to help with my a
 - Speed controls
 
 ## Rendered Model
-![Front view no edges](https://github.com/Miningsleuth/air-purifier/blob/main/Screenshot%202026-11-21%20151647.png?raw=true)
-![Back view with edges](https://github.com/Miningsleuth/air-purifier/blob/main/Screenshot%202026-11-21%20151705.png?raw=true)
+![Front view no edges](https://github.com/Miningsleuth/air-purifier/blob/main/Rendered%20Images/Screenshot%202026-11-21%20151647.png?raw=true)
+![Back view with edges](https://github.com/Miningsleuth/air-purifier/blob/main/Rendered%20Images/Screenshot%202026-11-21%20151705.png?raw=true)
 
 
 ## Circuit Diagram
-![Circuit Diagram](https://github.com/Miningsleuth/air-purifier/blob/main/circuit.png?raw=true)
+![Circuit Diagram](https://github.com/Miningsleuth/air-purifier/blob/main/circuits/circuit.png?raw=true)
 
 ## Components
 | Part | Type | Quantity | Unit price (NZD) | Line total (NZD) | Link | Vendor | Funding | Notes |
