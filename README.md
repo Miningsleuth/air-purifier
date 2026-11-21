@@ -1,7 +1,15 @@
 # Charlie's Smart Air Purifier
-A smart home compatible air purifier!
+A smart home compatible air purifier! I am making this project to help with my allergies and to just help make my room a cleaner, more healthy environment!
 
 ## Features
+- Particulate Matter Sensors
+- VOC Sensor
+- Temperature Sensor
+- Humidity Sensor
+- 5 layer HEPA filter
+- Home Assistant Controlled
+- RPM reporting
+- Speed controls
 
 ## Rendered Model
 ![Front view no edges](https://github.com/Miningsleuth/air-purifier/blob/main/Screenshot%202026-11-21%20151647.png?raw=true)
