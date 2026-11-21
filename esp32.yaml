@@ -14,8 +14,7 @@ logger:
 
 api:
   encryption:
-    key: "0z3hLea+V0OrufOU2nYAgVUTgzklF2aEv7NzLMqQGdo="
-
+    key: !secret air_purifier__encryption_key
 ota:
   - platform: esphome
     id: ota_esphome_1
@@ -43,16 +42,16 @@ sensor:
       name: Humidity
       id: sensor_sen5x_1_humidity
     pm_10_0:
-      name: PM 10 0
+      name: PM10
       id: sensor_sen5x_1_pm_10_0
     pm_1_0:
-      name: PM 1 0
+      name: PM1
       id: sensor_sen5x_1_pm_1_0
     pm_2_5:
-      name: PM 2 5
+      name: PM2.5
       id: sensor_sen5x_1_pm_2_5
     pm_4_0:
-      name: PM 4 0
+      name: PM4
       id: sensor_sen5x_1_pm_4_0
     temperature:
       name: Temperature
@@ -60,14 +59,56 @@ sensor:
     voc_index:
       name: VOC Index
       id: sensor_sen5x_1_voc_index
+  - platform: pulse_counter
+    name: RPM
+    id: sensor_pulse_counter_1
+    pin: GPIO13
+    unit_of_measurement: RPM
+    filters:
+      - multiply: 0.5
 
+    update_interval: 5s
 switch:
   - platform: gpio
-    name: Power
+    name: Relay
     id: switch_gpio_1
-    pin: GPIO14
+    pin: GPIO27
+    internal: true
+    restore_mode: ALWAYS_OFF
 
 output:
   - platform: ledc
     id: Fan_Speed
     pin: GPIO4
+    frequency: 25kHz
+
+binary_sensor:
+  - platform: gpio
+    name: Power
+    id: binary_sensor_gpio_1
+    pin:
+      number: GPIO14
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    filters:
+      - delayed_on: 50ms
+    on_press:
+      - fan.toggle: purifier_fan
+
+fan:
+  - platform: speed
+    id: purifier_fan
+    name: Air Purifier Fan
+    output: Fan_Speed
+    restore_mode: ALWAYS_OFF
+    on_turn_on:
+      - switch.turn_on: switch_gpio_1
+    on_turn_off:
+      - delay: 1s
+      - if:
+          condition:
+            fan.is_off: purifier_fan
+          then:
+            - switch.turn_off: switch_gpio_1
