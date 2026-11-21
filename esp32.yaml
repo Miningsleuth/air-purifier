@@ -1,0 +1,73 @@
+# Board: Generic ESP32 Board (Generic)
+# Definition: definitions/boards/generic-esp32/manifest.yaml
+
+esphome:
+  name: air-purifier
+  friendly_name: Air Purifier
+
+esp32:
+  variant: esp32
+  framework:
+    type: esp-idf
+
+logger:
+
+api:
+  encryption:
+    key: "0z3hLea+V0OrufOU2nYAgVUTgzklF2aEv7NzLMqQGdo="
+
+ota:
+  - platform: esphome
+    id: ota_esphome_1
+    password: !secret air_purifier__ota_password
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  ap:
+    ssid: Air Purifier Fallback Hotspot
+    password: "n2oqcXXffsG5"
+
+captive_portal:
+
+i2c:
+  - id: i2c_1
+    scl: 22
+    sda: 21
+
+sensor:
+  - platform: sen5x
+    id: sensor_sen5x_1
+    i2c_id: i2c_1
+    humidity:
+      name: Humidity
+      id: sensor_sen5x_1_humidity
+    pm_10_0:
+      name: PM 10 0
+      id: sensor_sen5x_1_pm_10_0
+    pm_1_0:
+      name: PM 1 0
+      id: sensor_sen5x_1_pm_1_0
+    pm_2_5:
+      name: PM 2 5
+      id: sensor_sen5x_1_pm_2_5
+    pm_4_0:
+      name: PM 4 0
+      id: sensor_sen5x_1_pm_4_0
+    temperature:
+      name: Temperature
+      id: sensor_sen5x_1_temperature
+    voc_index:
+      name: VOC Index
+      id: sensor_sen5x_1_voc_index
+
+switch:
+  - platform: gpio
+    name: Power
+    id: switch_gpio_1
+    pin: GPIO14
+
+output:
+  - platform: ledc
+    id: Fan_Speed
+    pin: GPIO4
