@@ -1,5 +1,6 @@
 # Charlie's Smart Air Purifier
 A smart home compatible air purifier! I am making this project to help with my allergies and to just help make my room a cleaner, more healthy environment!
+![Demonstration Render](https://github.com/Miningsleuth/air-purifier/blob/main/Rendered%20Images/Screenshot%202026-11-23%20121929.png?raw=true)
 
 ## Features
 - Particulate Matter Sensors
