@@ -39,7 +39,7 @@ A smart home compatible air purifier! I am making this project to help with my a
 | RA1113112R Switch | Part | 1 | 1.39 | 1.39 | [DigiKey](https://www.digikey.co.nz/en/products/detail/e-switch/RA1113112R/3778055?s=N4IgTCBcDaIM4HcCWAXAxgCxAXQL5A) | Digikey | Grant | Rocker Switch |
 | Elegoo PLA Matte filament Matte White 1.75mm 1kg | 3D printed | 1 | 29.90 | 29.90 | [Jaycar](https://www.jaycar.co.nz/elegoo-pla-matte-filament-matte-white-1-75mm-1kg/p/TL6484) | Jaycar | Grant | Filament (I will self-print, print is almost exactly 1kg) |
 | **Total** | | | | **303.70** | | | | |
-### Note: Gemini was used for converting BOM into this format
+### Disclaimer: AI was used to learn how to convert BOM format
 
 ## OnShape Files
 https://cad.onshape.com/documents/5657ea9d58c4bc3a8dbae36f/w/fcaea32baf2dbbd10a38cf35/e/5e69826395912e37b00f6081
